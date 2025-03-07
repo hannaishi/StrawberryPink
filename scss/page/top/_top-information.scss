@@ -1,0 +1,60 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-information
+------------------------------
+*/
+.information {
+    width: 100%;
+    background-image: url("../img/info.jpg");
+    background-repeat:  no-repeat;
+    background-position: 0 60%;
+    background-size: cover;
+}
+.info-card {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include g.mq(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @include g.mq() {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+  .p-card {
+    background-color: #ea638c;
+    opacity: 0.8;
+    color: #fff2d3;
+    text-align: center;
+    padding: 10px;
+  }
+  .p-card:hover {
+    opacity: 1;
+    animation-duration: 0.5s;
+  }
+    .fadeRight{
+      animation-name:fadeRightAnime;
+      animation-duration:3.5s;
+      animation-fill-mode:forwards;
+      opacity:0;
+      }
+
+      @keyframes fadeRightAnime{
+        from {
+          opacity: 0;
+        transform: translateX(300px);
+        }
+
+        to {
+          opacity: 1;
+        transform: translateX(0);
+        }
+      }
+
+  

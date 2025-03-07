@@ -1,0 +1,26 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-about
+------------------------------
+*/
+.about {
+    background-color: #ffebeb;
+}
+.about-contents {
+    padding-top: 68px;
+    padding-bottom: 68px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include g.mq() {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+.about-circle img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}

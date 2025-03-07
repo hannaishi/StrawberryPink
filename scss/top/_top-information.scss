@@ -1,0 +1,74 @@
+@use "../global" as g;
+
+/*!
+top > top-information
+------------------------------
+*/
+.information {
+    background-image: url(../img/sp_bg_info.jpg);
+    background-image: image-set(url(../img/sp_bg_info.jpg) 1x, url(../img/sp_bg_info.jpg) 2x);
+    background-image: -webkit-image-set(url(../img/sp_bg_info.jpg) 1x, url(../img/sp_bg_info.jpg) 2x);
+    background-position: top;
+    background-size: cover;
+
+    @include g.mq() {
+        background-image: url(../img/bg_info.jpg);
+        background-image: image-set(url(../img/bg_info.jpg) 1x, url(../img/bg_info.jpg) 2x);
+        background-image: -webkit-image-set(url(../img/bg_info.jpg) 1x, url(../img/bg_info.jpg) 2x);
+    }
+}
+.info-flex {
+    display: grid;
+    gap: 24px;
+    padding: 60px 0;
+
+    @include g.mq() {
+        padding: 90px 0;
+        gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.info-flex-item {
+    display: block;
+    position: relative;
+
+    @include g.mq() {
+        padding-top: 100%;
+    }
+
+    img {
+        @include g.mq() {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.bg-item {
+    position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        background-color: var(--color-bg-pink);
+        display: grid;
+        align-items: center;
+
+    @include g.mq() {
+        height: 70px;
+    }
+}
+.item-title {
+    font-size: 20px;
+    text-align: center;
+    color: var(--color-font-white);
+    font-weight: bold;
+
+
+    @include g.mq() {
+        font-size: 28px;
+    }
+}
